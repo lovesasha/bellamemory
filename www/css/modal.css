@@ -1,0 +1,243 @@
+.player {
+  color: #9d9690;
+}
+.player .scroll {
+  height: 100%;
+  overflow: hidden;
+}
+.player .bar {
+  background: transparent;
+}
+.player .bar .title {
+  color: #f0f0f0;
+}
+.player .back-wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+}
+.player .backdground {
+  width: 100%;
+  height: 100%;
+  background: url(../img/half.jpg) no-repeat center;
+  background-size: auto 100%;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-filter: blur(10px) brightness(0.5);
+}
+.player .ep-wrap {
+  width: 74%;
+  margin: 0 auto;
+  margin-top: 30%;
+  border: 6px solid rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+.player .ep-image {
+  width: 100%;
+  padding-bottom: 100%;
+  background: url(../img/half.jpg) no-repeat center;
+  background-size: 100%;
+  border-radius: 50%;
+}
+
+.player .range-area {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20%;
+}
+.player .range-area > span {
+  display: inline-block;
+  margin: 0 8px;
+}
+.player .range-area .range-time {
+  font-size: 13px;
+}
+.player .range-area .range-track {
+  width: 60%;
+  height: 0;
+  border: 1px solid #9d9690;
+  border-radius: 2px;
+  vertical-align: middle;
+  position: relative;
+}
+.player .range-area .range-thumb {
+  width: 18px;
+  height: 18px;
+  background-color: #31c17b;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: -9px;
+  left: 0;
+}
+.player .range-area .range-slider {
+  height: 0;
+  vertical-align: middle;
+  border: 1px solid #31c17b;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+}
+
+.player .operation-area {
+  color: #31c17b;
+  text-align: center;
+  margin-top: 6%;
+}
+.player .operation-area > div {
+  display: inline-block;
+  margin: 0 16px;
+  border: 2px solid #31c17b;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.player .operation-area .play {
+  width: 66px;
+  height: 66px;
+}
+.player .operation-area .play i {
+  font-size: 42px;
+  line-height: 62px;
+}
+.player .operation-area .play i:first-child {
+  margin-left: 6px;
+}
+.player .operation-area .play i:last-child {
+  margin-left: 1px;
+}
+.player .operation-area .change {
+  width: 46px;
+  height: 46px;
+}
+.player .operation-area .change i {
+  font-size: 22px;
+  line-height: 42px;
+}
+
+.player.ng-enter .header {
+  -webkit-animation: shakeTopBottom 300ms 100ms;
+  animation: shakeTopBottom 300ms 100ms;
+}
+.player.ng-enter .control-area {
+  -webkit-animation: shakeBottomTop 300ms 100ms;
+  animation: shakeBottomTop 300ms 100ms;
+}
+
+@-webkit-keyframes shakeTopBottom {
+  0% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  50% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes shakeTopBottom {
+  0% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  50% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes shakeBottomTop {
+  0% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  50% {
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes shakeBottomTop {
+  0% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  50% {
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+/*唱碟无限旋转*/
+.infinite-rotate {
+  -webkit-animation: rotateClockwise 40s infinite linear;
+  animation: rotateClockwise 40s infinite linear;
+}
+@-webkit-keyframes rotateClockwise {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateClockwise {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*模态化窗口动画*/
+/*淡入淡出*/
+.light-fade-in-out {
+  opacity: 0;
+}
+.light-fade-in-out.ng-enter,
+.light-fade-in-out > .ng-enter {
+  /*-webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;*/
+  /*transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;*/
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
+}
+.light-fade-in-out.ng-enter-active,
+.light-fade-in-out > .ng-enter-active {
+  opacity: 1;
+}
+.light-fade-in-out.ng-leave,
+.light-fade-in-out > .ng-leave {
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
+}
+/*左入右出*/
+.slide-left-right {
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+.slide-left-right.ng-enter,
+.slide-left-right > .ng-enter {
+  -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+  transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+}
+.slide-left-right.ng-enter-active,
+.slide-left-right > .ng-enter-active {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.slide-left-right.ng-leave,
+.slide-left-right > .ng-leave {
+  -webkit-transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms;
+}

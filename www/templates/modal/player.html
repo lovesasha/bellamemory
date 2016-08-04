@@ -1,0 +1,40 @@
+<ion-modal-view class="player">
+  <ion-content has-bouncing="false" scrollbar-y="false">
+    <!--顶部-->
+    <div class="header bar">
+      <div class="buttons">
+        <button ng-click="closePlayer()" class="button-icon ion-ios-arrow-down light"></button>
+      </div>
+      <div class="title">不唱情歌</div>
+    </div>
+    <!--背景-->
+    <div class="back-wrap">
+      <div class="backdground"></div>
+    </div>
+    <div class="ep-wrap">
+      <div class="ep-image infinite-rotate"
+           ng-style="{'animation-play-state': playing ? 'running' : 'paused'}"></div>
+    </div>
+    <!--播放控制区-->
+    <div class="control-area">
+      <!--播放时间和进度-->
+      <div class="range-area">
+        <span class="range-time time-now">00:06</span>
+      <span class="range-track">
+        <span class="range-slider"></span>
+        <span class="range-thumb" on-drag-start="thumbDragStart()" on-drag="thumbDrag()"></span>
+      </span>
+        <span class="range-time time-total">04:15</span>
+      </div>
+      <!--播放暂停-->
+      <div class="operation-area">
+        <div class="prev change"><i class="ion-ios-skipbackward"></i></div>
+        <div class="play" ng-click="playOrPause()">
+          <i class="ion-ios-play" ng-show="!playing"></i>
+          <i class="ion-ios-pause" ng-show="playing"></i>
+        </div>
+        <div class="next change"><i class="ion-ios-skipforward"></i></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,10 @@
+<ion-view view-title="贝壳天地">
+  <ion-content has-bouncing="true">
+    <div class="list">
+      <div class="item" ng-repeat="article in articles"
+          ng-click="articleDetail(article.id)">
+        <div ng-bind="article.title"></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
